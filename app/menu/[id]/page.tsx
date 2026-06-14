@@ -7,10 +7,10 @@ export default async function MenuItemPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
+  const { id } = await params;
   const res = await fetch(
-    `http://localhost:3000/api/menu/${(await params).id}`
+    `http://localhost:3000/api/menu/${id}`
   );
- 
   if (!res.ok) {
     return (
       <div className='p-8'>
